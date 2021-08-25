@@ -1,0 +1,11 @@
+version: '3'
+services:
+    mjpeg-proxy:
+        build:
+            context: .
+        image: mjpeg-proxy
+        container_name: mjpeg-proxy
+        volumes:
+            - './sources.json:/go/src/mjpeg-proxy/sources.json'
+        restart: always
+        command: "/go/src/mjpeg-proxy/mjpeg-proxy -sources sources.json"
