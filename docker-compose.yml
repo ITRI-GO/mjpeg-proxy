@@ -3,8 +3,10 @@ services:
     mjpeg-proxy:
         build:
             context: .
-        image: mjpeg-proxy
+        image: itri-go/mjpeg-proxy
         container_name: mjpeg-proxy
+        ports:
+            - 54321:8080
         volumes:
             - './sources.json:/go/src/mjpeg-proxy/sources.json'
         restart: always
